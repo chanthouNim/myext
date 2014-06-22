@@ -1,0 +1,27 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Page" />
+
+<f:section name="Configuration">
+	<flux:form id="fluidfluxform" label="Two Column" icon="{f:uri.resource(path: 'Icons/Page.gif')}">
+		<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+	</flux:form>
+	<flux:flexform.grid>
+		<flux:flexform.grid.row>
+			<flux:flexform.grid.column colPos="0" name="Content" />
+		</flux:flexform.grid.row>
+	</flux:flexform.grid>
+</f:section>
+
+<f:section name="Main">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9">e
+				<v:page.content.render column="0"/>
+			</div>
+			<div class="col-lg-3">
+				test
+			</div>
+		</div>
+	</div>
+</f:section>

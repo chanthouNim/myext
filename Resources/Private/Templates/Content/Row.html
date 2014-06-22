@@ -1,0 +1,52 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+<f:section name="Configuration">
+	<flux:flexform wizardTab="Custom" id="dynamicRow" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
+		<flux:field.input name="specialRowClass" label="Additional class of row"/>
+		<flux:field.checkbox name="showBorder" label="Show border at the end of row"/>
+		<flux:field.input name="borderAdditionalClass" label="Additional class of border"/>
+		<flux:form.section name="columns">
+			<flux:form.object name="column">
+				<flux:field.select name="class" items="col-lg-1,col-lg-2,col-lg-3,col-lg-4,col-lg-5,col-lg-6,col-lg-7,col-lg-8,col-lg-9,col-lg-10,col-lg-11,col-lg-12" />
+				<flux:field.input name="additionalClass" />
+			</flux:form.object>
+		</flux:form.section>
+		<flux:grid>
+			<flux:grid.row>
+				<f:for each="{columns}" as="sectionObject" iteration="iteration">
+					<v:var.set name="width" value="{sectionObject.column.class -> v:format.substring(start: 7)}" />
+					<v:var.set name="percent" value="{width  -> v:math.division(b: 12) -> v:math.product(b: 100) -> v:math.round(decimals: 2)}" />
+					<flux:grid.column style="width: {percent}%">
+						<flux:form.content name="column{iteration.cycle}" label="{percent}%" />
+					</flux:grid.column>
+				</f:for>
+			</flux:grid.row>
+		</flux:grid>
+	</flux:flexform>
+</f:section>
+
+<f:section name="Main">
+	<div class="row {specialRowClass}">
+		<f:for each="{columns}" as="sectionObject" iteration="iteration">
+			<div class="{sectionObject.column.class} {sectionObject.column.additionalClass}">
+				<flux:content.render area="column{iteration.cycle}" />
+			</div>
+		</f:for>
+	</div>
+	<f:if condition="{showBorder}">
+		<hr class="{borderAdditionalClass}"/>
+	</f:if>
+
+</f:section>
+
+<f:section name="Preview">
+	<flux:widget.grid />
+</f:section>
+
+</div>

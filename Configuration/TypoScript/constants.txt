@@ -1,0 +1,5 @@
+plugin.tx_myext.view {
+	templateRootPath = EXT:myext/Resources/Private/Templates/
+	partialRootPath = EXT:myext/Resources/Private/Partials/
+	layoutRootPath = EXT:myext/Resources/Private/Layouts/
+}

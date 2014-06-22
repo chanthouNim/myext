@@ -1,0 +1,67 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+<f:section name="Configuration">
+	<flux:flexform wizardTab="Custom" id="slideshow" label="SlideShow" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
+		<flux:flexform.field.input name="settings.slideshow.id" default="{v:random.string(length: 8)}" />
+		<flux:flexform.grid>
+			<f:for each="{elements}" as="element" iteration="iteration">
+				<f:for each="{element}" key="elementType" as="elementData">
+					<f:if condition="{0: elementType} == {0: 'content'}">
+						<flux:flexform.grid.row>
+							<flux:flexform.grid.column>
+								<flux:flexform.content name="{elementData.id}" label="Content: {elementData.id}" />
+							</flux:flexform.grid.column>
+						</flux:flexform.grid.row>
+					</f:if>
+				</f:for>
+			</f:for>
+		</flux:flexform.grid>
+		<flux:flexform.sheet name="elements" label="Item">
+			<flux:flexform.section name="elements">
+				<flux:flexform.object name="item">
+					<flux:flexform.field.file name="file" />
+					<flux:flexform.field.input name="header" maxCharacters="50"/>
+					<flux:flexform.field.text name="text" enableRichText="TRUE" />
+				</flux:flexform.object>
+			</flux:flexform.section>
+		</flux:flexform.sheet>
+	</flux:flexform>
+</f:section>
+
+<f:section name="Preview">
+</f:section>
+
+<f:section name="Main">
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<f:for each="{elements}" as="element" iteration="iteration">
+					<li data-target="#myCarousel" data-slide-to="{iteration.index}" class="{f:if(condition: iteration.isFirst, then: 'active')}"></li>
+
+			</f:for>
+		</ol>
+		<div class="carousel-inner">
+			<f:for each="{elements}" as="element" iteration="iteration">
+				<div class="item {f:if(condition: iteration.isFirst, then: 'active')}">
+					<f:image src="{element.item.file}" class="ls-bg" alt="{element.item.header}"/>
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>{element.item.header}</h1>
+							<f:format.html>{element.item.text}</f:format.html>
+						</div>
+					</div>
+				</div>
+			</f:for>
+		</div>
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	</div>
+</f:section>
+</div>

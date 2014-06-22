@@ -1,0 +1,12 @@
+plugin.tx_myext.view {
+	templateRootPath = {$plugin.tx_myext.view.templateRootPath}
+	partialRootPath = {$plugin.tx_myext.view.partialRootPath}
+	layoutRootPath = {$plugin.tx_myext.view.layoutRootPath}
+}
+
+## Page
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:myext/Configuration/TypoScript/Page/Setup.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:myext/Configuration/TypoScript/Page/CssJs/Setup.ts">
+
+## Navigations
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:myext/Configuration/TypoScript/Lib/Nav/Main/Setup.ts">
