@@ -7,7 +7,7 @@
      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
 
 <f:section name="Configuration">
-	<flux:flexform wizardTab="Custom" id="dynamicRow" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
+	<flux:form wizardTab="MyExtension" id="dynamicRow" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
 		<flux:field.input name="specialRowClass" label="Additional class of row"/>
 		<flux:field.checkbox name="showBorder" label="Show border at the end of row"/>
 		<flux:field.input name="borderAdditionalClass" label="Additional class of border"/>
@@ -28,7 +28,7 @@
 				</f:for>
 			</flux:grid.row>
 		</flux:grid>
-	</flux:flexform>
+	</flux:form>
 </f:section>
 
 <f:section name="Main">

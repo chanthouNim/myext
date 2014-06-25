@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" product-name="myext" date="2014-06-20">
+		<header/>
+		<body>
+			<trans-unit id="flux.dynamicRow" xml:space="preserve">
+				<source>MyExt: Column Row</source>
+			</trans-unit>
+			<trans-unit id="flux.dynamicRow.description" xml:space="preserve">
+				<source>MyExt: The Dynamic row</source>
+			</trans-unit>
+			<trans-unit id="flux.slideShow" xml:space="preserve">
+				<source>MyExt: SlideShow</source>
+			</trans-unit>
+			<trans-unit id="flux.slideShow.description" xml:space="preserve">
+				<source>MyExt: The slide show</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
