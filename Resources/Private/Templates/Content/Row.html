@@ -9,7 +9,7 @@
 <f:section name="Configuration">
 	<flux:form wizardTab="MyExtension" id="dynamicRow" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
 		<flux:field.input name="specialRowClass" label="Additional class of row"/>
-		<flux:field.checkbox name="showBorder" label="Show border at the end of row"/>
+		<flux:field.checkbox name="showBorder" label="Show border at the top of row"/>
 		<flux:field.input name="borderAdditionalClass" label="Additional class of border"/>
 		<flux:form.section name="columns">
 			<flux:form.object name="column">
@@ -32,6 +32,9 @@
 </f:section>
 
 <f:section name="Main">
+	<f:if condition="{showBorder}">
+		<hr class="{borderAdditionalClass}"/>
+	</f:if>
 	<div class="row {specialRowClass}">
 		<f:for each="{columns}" as="sectionObject" iteration="iteration">
 			<div class="{sectionObject.column.class} {sectionObject.column.additionalClass}">
@@ -39,9 +42,6 @@
 			</div>
 		</f:for>
 	</div>
-	<f:if condition="{showBorder}">
-		<hr class="{borderAdditionalClass}"/>
-	</f:if>
 
 </f:section>
 

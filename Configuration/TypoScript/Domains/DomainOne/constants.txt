@@ -4,7 +4,7 @@ plugin.tx_myext.view {
 	layoutRootPath = EXT:myext/Resources/Private/Layouts/
 }
 const.language.label.english = en
-const.language.label.khmer = kh
-const.page.root = 1
-const.page.home = 2
-const.baseURL = http://local.demotest
+const.language.label.khmer = khmer
+const.page.root = 22
+const.page.home = 23
+const.baseURL = http://local.domainone/

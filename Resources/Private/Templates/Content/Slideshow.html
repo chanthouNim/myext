@@ -7,31 +7,31 @@
      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
 
 <f:section name="Configuration">
-	<flux:flexform wizardTab="Custom" id="slideshow" label="SlideShow" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
-		<flux:flexform.field.input name="settings.slideshow.id" default="{v:random.string(length: 8)}" />
-		<flux:flexform.grid>
+	<flux:form wizardTab="MyExtension" id="slideShow" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
+		<flux:field.input name="settings.slideshow.id" default="{v:random.string(length: 8)}" />
+		<flux:grid>
 			<f:for each="{elements}" as="element" iteration="iteration">
 				<f:for each="{element}" key="elementType" as="elementData">
 					<f:if condition="{0: elementType} == {0: 'content'}">
-						<flux:flexform.grid.row>
-							<flux:flexform.grid.column>
-								<flux:flexform.content name="{elementData.id}" label="Content: {elementData.id}" />
-							</flux:flexform.grid.column>
-						</flux:flexform.grid.row>
+						<flux:grid.row>
+							<flux:grid.column>
+								<flux:form.content name="{elementData.id}" label="Content: {elementData.id}" />
+							</flux:grid.column>
+						</flux:grid.row>
 					</f:if>
 				</f:for>
 			</f:for>
-		</flux:flexform.grid>
-		<flux:flexform.sheet name="elements" label="Item">
-			<flux:flexform.section name="elements">
-				<flux:flexform.object name="item">
-					<flux:flexform.field.file name="file" />
-					<flux:flexform.field.input name="header" maxCharacters="50"/>
-					<flux:flexform.field.text name="text" enableRichText="TRUE" />
-				</flux:flexform.object>
-			</flux:flexform.section>
-		</flux:flexform.sheet>
-	</flux:flexform>
+		</flux:grid>
+		<flux:form.sheet name="elements" label="Item">
+			<flux:form.section name="elements">
+				<flux:form.object name="item">
+					<flux:field.file name="file" />
+					<flux:field.input name="header" maxCharacters="50"/>
+					<flux:field.text name="text" enableRichText="TRUE" />
+				</flux:form.object>
+			</flux:form.section>
+		</flux:form.sheet>
+	</flux:form>
 </f:section>
 
 <f:section name="Preview">

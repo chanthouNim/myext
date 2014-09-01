@@ -3,17 +3,46 @@
 	<file source-language="en" datatype="plaintext" original="messages" product-name="myext" date="2014-06-20">
 		<header/>
 		<body>
+			<!-- Dynamic Row Block -->
 			<trans-unit id="flux.dynamicRow" xml:space="preserve">
 				<source>MyExt: Column Row</source>
 			</trans-unit>
 			<trans-unit id="flux.dynamicRow.description" xml:space="preserve">
 				<source>MyExt: The Dynamic row</source>
 			</trans-unit>
+			<!-- SlideShow Block -->
 			<trans-unit id="flux.slideShow" xml:space="preserve">
 				<source>MyExt: SlideShow</source>
 			</trans-unit>
 			<trans-unit id="flux.slideShow.description" xml:space="preserve">
 				<source>MyExt: The slide show</source>
+			</trans-unit>
+			<trans-unit id="flux.slideShow.fields.settings.slideshow.id" xml:space="preserve">
+				<source>Do not change this</source>
+			</trans-unit>
+			<trans-unit id="flux.slideShow.objects.item.file" xml:space="preserve">
+				<source>Image</source>
+			</trans-unit>
+			<!-- Teaser Cycle Image Block -->
+			<trans-unit id="flux.teaserCycleImage" xml:space="preserve">
+				<source>MyExt: Teaser Cycle Image</source>
+			</trans-unit>
+			<trans-unit id="flux.teaserCycleImage.description" xml:space="preserve">
+				<source>MyExt: Image in cycle</source>
+			</trans-unit>
+			<!-- Teaser Cycle Image Block -->
+			<trans-unit id="flux.teaserCycleSubPage" xml:space="preserve">
+				<source>MyExt: Teaser Cycle Sub Page</source>
+			</trans-unit>
+			<trans-unit id="flux.teaserCycleSubPage.description" xml:space="preserve">
+				<source>MyExt: Teaser Cycle Sub Page</source>
+			</trans-unit>
+			<!-- Teaser Cycle Image Block -->
+			<trans-unit id="flux.homePageTextBlog" xml:space="preserve">
+				<source>MyExt: Home Page Text Blog</source>
+			</trans-unit>
+			<trans-unit id="flux.homePageTextBlog.description" xml:space="preserve">
+				<source>MyExt: Home Page Text Blog</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -1,21 +1,21 @@
-{namespace flux=Tx_Flux_ViewHelpers}
 {namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
 <f:layout name="Content" />
 <div xmlns="http://www.w3.org/1999/xhtml"
-     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
-     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
-     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+	 xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+	 xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
 
 	<f:section name="Configuration">
-		<flux:flexform wizardTab="Custom" id="teaserCycleImage" label="Cycle Image Teaser" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
-			<flux:flexform.field.file name="image" />
-			<flux:flexform.field.input name="header" eval="trim,required"/>
-			<flux:flexform.field.text name="text" enableRichText="TRUE"/>
-			<flux:flexform.field.input name="linkLabel" eval="trim,required"/>
-			<flux:flexform.field.input name="linkTarget">
+		<flux:form wizardTab="MyExtension" id="teaserCycleImage" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
+			<flux:field.file name="image" />
+			<flux:field.input name="header" eval="trim,required"/>
+			<flux:field.text name="text" enableRichText="TRUE"/>
+			<flux:field.input name="linkLabel" eval="trim,required"/>
+			<flux:field.input name="linkTarget">
 				<flux:flexform.field.wizard.link />
-			</flux:flexform.field.input>
-		</flux:flexform>
+			</flux:field.input>
+		</flux:form>
 	</f:section>
 
 	<f:section name="Preview">

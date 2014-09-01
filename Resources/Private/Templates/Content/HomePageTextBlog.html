@@ -1,0 +1,32 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+	 xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+	 xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+	 xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="Configuration">
+		<flux:form wizardTab="MyExtension" id="homePageTextBlog" icon="{v:extension.path.resources(path: 'Icons/teaser.png')}">
+			<flux:field.input name="header" eval="trim,required"/>
+			<flux:field.input name="textMutedHeader" eval="trim"/>
+			<flux:field.text name="text" enableRichText="FALSE"/>
+		</flux:form>
+	</f:section>
+
+	<f:section name="Preview">
+		<strong>Image</strong>: {image}<br>
+		<strong>Text</strong>: {text}<br>
+		<strong>Link</strong>: {linkTarget}
+	</f:section>
+
+	<f:section name="Main">
+			<h2 class="featurette-heading">
+				{header}
+				<f:if condition="{textMutedHeader}">
+					<span class="text-muted">{textMutedHeader}</span>
+				</f:if>
+			</h2>
+			<p class="lead">{text}</p>
+	</f:section>
+</div>

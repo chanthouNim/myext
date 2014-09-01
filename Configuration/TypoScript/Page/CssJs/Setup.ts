@@ -15,3 +15,12 @@ page {
         }
     }
 }
+## If Root Change style css
+[globalVar = TSFE:id = 1]
+page {
+    includeCSS {
+        style = EXT:myext/Resources/Public/Stylesheets/home.css
+    }
+}
+[end]
+

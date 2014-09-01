@@ -1,6 +1,6 @@
 {namespace flux=FluidTYPO3\Flux\ViewHelpers}
 {namespace v=Tx_Vhs_ViewHelpers}
-<f:layout name="Page" />
+<f:layout name="TwoColumns" />
 
 <f:section name="Configuration">
 	<flux:form id="fluidfluxform" label="Two Column" icon="{f:uri.resource(path: 'Icons/Page.gif')}">
@@ -14,13 +14,13 @@
 </f:section>
 
 <f:section name="Main">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-9">e
-				<v:page.content.render column="0"/>
+			<div class="col-sm-3 col-md-2 sidebar">
+				<f:cObject typoscriptObjectPath="lib.nav.left" />
 			</div>
-			<div class="col-lg-3">
-				test
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<v:page.content.render column="0"/>
 			</div>
 		</div>
 	</div>

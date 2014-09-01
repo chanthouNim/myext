@@ -2,11 +2,10 @@
 lib.nav.main = HMENU
 lib.nav.main {
 	special = directory
-	special.value = 1
+	special.value = {$const.page.root}
 
 	1 = TMENU
 	1 {
-		wrap = <ul class="nav navbar-nav">|</ul>
 		noBlur = 1
 		expAll = 1
 
@@ -57,12 +56,10 @@ lib.nav.main {
 			wrapItemAndSub = <li class="divider">|</li>
 		}
 	}
-	
-	#3 < .2
-	#4 < .3
 }
 
+
 ## If it is the root page then set the home page as active
-[globalVar = TSFE:id = 1]
-	lib.nav.main.alwaysActivePIDlist = 2
+[globalVar = TSFE:id = {$const.page.root}]
+	lib.nav.main.alwaysActivePIDlist = {$const.page.home}
 [end]
